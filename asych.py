@@ -25,7 +25,7 @@ async def count2(session):
 
 async def count3(session):
     print('temp3')
-    resp = await session.get(f'http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID={api_key_three}')
+    resp = await session.get(f'https://api.openweathermap.org/data/2.5/weather?lat=45.34&lon=28.84&appid={api_key_three}')
     json_data = await resp.json()
     temperature_kelvin = json_data['main']['temp']
     temperature_celsius = temperature_kelvin - 273.15
